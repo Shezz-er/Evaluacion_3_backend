@@ -1,0 +1,41 @@
+{% extends "base.html" %} {% block titulo %} Registro de Vehiculos {% endblock %} {% block body %}
+<h1>Registro de Vehiculos</h1>
+
+<form action="registroV" method="post"> {% csrf_token %}
+    <table>
+        <tr>
+            <td>Patente</td>
+            <td><input type="text" name="patente" placeholder="Ingrese número de patente" required/></td>
+        </tr>
+        <tr>
+            <td>Número de chasis</td>
+            <td><input type="text" name="numero_chasis" placeholder="Ingrese número de chasis " required/></td>
+        </tr>
+        <tr>
+            <td>Marca</td>
+            <td><input type="text" name="marcaV" placeholder="Ingrese marca" required/></td>
+        </tr>
+        <tr>
+            <td>Modelo</td>
+            <td><input type="text" name="modelo" placeholder="Ingrese modelo" required/></td>
+        </tr>
+        <tr>
+            <td>Fecha últ. Revisión</td>
+            <td><input type="date" name="ultima_revision" placeholder="Ingrese fecha de ultima revision" required/></td>
+        </tr>
+        <tr>
+            <td>Fecha Prox. Revisión</td>
+            <td><input type="date" name="proxima_revision" placeholder="Ingrese fecha de proxima revisión" required/></td>
+        </tr>
+        <tr>
+            <td>Observaciones</td>
+            <td><input type="text" name="observaciones" placeholder="Ingrese observaciones" required/></td>
+        </tr>
+    </table>
+    <div class="form-group py-3">
+        <button type="submit" class="btn btn-success btn-block">Ingresar</button>
+        <button type="button" class="btn btn-danger btn-block" onclick="document.location.href='inicio'">Cancelar</button>
+    </div>
+</form>
+
+{% endblock %}

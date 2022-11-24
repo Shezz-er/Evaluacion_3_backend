@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block titulo %} Registro de insumo de computacion {% endblock %} {% block body %}
+<h1>Registro de insumo computacionales</h1>
+
+<form action="registroC" method="post"> {% csrf_token %}
+    <table>
+        <tr>
+            <td>Número de insumo</td>
+            <td><input type="integer" name="numero_insumo" placeholder="Ingrese número de insumo" required/></td>
+        </tr>
+        <tr>
+            <td>Nombre</td>
+            <td><input type="text" name="nombre" placeholder="Ingrese nombre " required/></td>
+        </tr>
+        <tr>
+            <td>Fecha de obtención</td>
+            <td><input type="date" name="fecha_adquisicion" placeholder="Ingrese fecha de obtención" required/></td>
+        </tr>
+        <tr>
+            <td>Marca</td>
+            <td><input type="text" name="marcaC" placeholder="Ingrese marca" required/></td>
+        </tr>
+        <tr>
+            <td>Stock</td>
+            <td><input type="text" name="stockC" placeholder="Ingrese stock" required/></td>
+        </tr>
+        <tr>
+            <td>Descripción</td>
+            <td><input type="text" name="descripcion" placeholder="Ingrese descripcion" required/></td>
+        </tr>
+    </table>
+    <div class="form-group py-3">
+        <button type="submit" class="btn btn-success btn-block">Ingresar</button>
+        <button type="button" class="btn btn-danger btn-block" onclick="document.location.href='inicio'">Cancelar</button>
+    </div>
+</form>
+
+{% endblock %}

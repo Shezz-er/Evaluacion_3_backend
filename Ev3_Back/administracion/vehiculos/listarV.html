@@ -1,0 +1,45 @@
+{% extends "base.html" %} {% block titulo %} Lista de Vehiculos {% endblock %} {% block body %}
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                | Número de patente |
+            </th>
+            <th>
+                | Número de chasis |
+            </th>
+            <th>
+                | Marca |
+            </th>
+            <th>
+                | Modelo |
+            </th>
+            <th>
+                | Última revisión |
+            </th>
+            <th>
+                | Próxima revisión |
+            </th>
+            <th>
+                | Observaciones |
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for veh in vehiculos %}
+        <tr>
+            <td>|{{veh.patente}}</td>
+            <td>|{{veh.numero_chasis}}</td>
+            <td>|{{veh.marca}}</td>
+            <td>|{{veh.modelo}</td>
+            <td>|{{veh.ultima_revision}}</td>
+            <td>|{{veh.proxima_revision}}</td>
+            <td>|{{veh.observaciones}}</td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+
+
+{% endblock %}
